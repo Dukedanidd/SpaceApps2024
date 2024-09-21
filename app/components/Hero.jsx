@@ -7,6 +7,9 @@ function Hero() {
             <h1 className='font-bold items-center flex text-9xl text-white'>
             NEBULA DRIFT
             </h1>
+            <button className='text-4xl rounded-xl bg-white'>
+               Play
+            </button>
         </div>
      </section>
   )
