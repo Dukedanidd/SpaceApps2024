@@ -1,5 +1,3 @@
-
-
 import "./globals.css";
 
 
@@ -7,8 +5,6 @@ export const metadata = {
   title: "Nebula Drift",
   description: "A No Sabemos Programar App",
 };
-
-
 
 export default function RootLayout({ children }) {
   return (
