@@ -6,11 +6,14 @@
 .pnp.js
 .yarn/install-state.gz
 
+# lock files
+package-lock.json
+
 # testing
 /coverage
 
 # next.js
-/.next/
+**/.next/
 /out/
 
 # production
@@ -34,3 +37,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# JetBrains
+.idea/
