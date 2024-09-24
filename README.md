@@ -12,5 +12,5 @@ Copy the game build to the website with the following command:
 > Wait for the build to finish before running this command
 
 ```bash
-ROBOCOPY game\build\Build\ packages\website\public\game\ /E
+ROBOCOPY game\build\Build\ public\game\ /E
 ```
