@@ -3,10 +3,12 @@ using System.Collections;
 
 public class CameraController : MonoBehaviour
 {
-
-
+    // Mouse Look Script
 	Vector2 _mouseAbsolute;
 	Vector2 _smoothMouse;
+
+	private float moveSpeed = 0.5f;
+    private float scrollSpeed = 10f;
 
 	public Vector2 clampInDegrees = new Vector2 (360, 180);
 	public Vector2 sensitivity = new Vector2 (2, 2);
@@ -70,5 +72,30 @@ public class CameraController : MonoBehaviour
 			var yRotation = Quaternion.AngleAxis (_mouseAbsolute.x, transform.InverseTransformDirection (Vector3.up));
 			transform.localRotation *= yRotation;
 		}
+
+		// Move the camera
+		if (Input.GetKey(KeyCode.W)) {
+		    transform.position += moveSpeed * transform.forward;
+		}
+
+		if (Input.GetKey(KeyCode.S)) {
+		    transform.position -= moveSpeed * transform.forward;
+		}
+
+		if (Input.GetKey(KeyCode.A)) {
+		    transform.position -= moveSpeed * transform.right;
+		}
+
+		if (Input.GetKey(KeyCode.D)) {
+		    transform.position += moveSpeed * transform.right;
+		}
+
+		if (Input.GetKey(KeyCode.Space)) {
+            transform.position += moveSpeed * transform.up;
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift)) {
+            transform.position -= moveSpeed * transform.up;
+        }
 	}
 }
