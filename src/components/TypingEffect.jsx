@@ -22,7 +22,6 @@ export default function TypingEffect() {
             })
             .pauseFor(29000)
             .callFunction(() => {
-              console.log("All strings were deleted");
             })
             .start();
         }}

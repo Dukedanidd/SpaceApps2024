@@ -6,7 +6,7 @@ function SectionLore() {
     <section>
       <div
         className="bg-black h-screen flex items-center justify-center"
-        style={{ backgroundImage: "url('/stars.png')" }}
+        style={{ backgroundImage: "url('./stars.png')" }}
       >
         <h1 className="text-white text-4xl">
           <TypingEffect />
