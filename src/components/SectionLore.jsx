@@ -11,6 +11,7 @@ function SectionLore() {
         <h1 className="text-white text-4xl">
           <TypingEffect />
         </h1>
+        
       </div>
     </section>
   );
