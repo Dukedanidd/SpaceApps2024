@@ -4,7 +4,7 @@ import Typewriter from "typewriter-effect";
 
 export default function TypingEffect() {
   const [currentIndex, setCurrentIndex] = useState(0); // Estado para controlar el índice actual
-  const [displayedText, setDisplayedText] = useState(""); // Estado para el texto mostrado
+  const [displayedText, setDisplayedText] = useState([]);// Estado para textos mostrados
 
   const typewriters = [
     {
@@ -66,39 +66,33 @@ export default function TypingEffect() {
   };
 
   return (
-    <div className="flex flex-col gap-1 items-center text-2xl lg:text-4xl justify-center min-h-screen font-mono text-center">
-      <div className="text-4xl lg:text-6xl flex flex-col items-center justify-center mb-4 text-center">
-        <h3>La Misión Estelar de Astronautita Armstrong y DEX</h3>
-      </div>
-      {typewriters.map((item, index) => (
-        index === currentIndex && (
+      <div className="flex flex-col gap-1 items-center text-2xl lg:text-4xl justify-center min-h-screen font-mono text-center">
+        <h3 className="text-4xl lg:text-6xl mb-4">La Misión Estelar de Astronautita Armstrong y DEX</h3>
+        {displayedTexts.map((text, index) => (
+          <div key={index} dangerouslySetInnerHTML={{ __html: text }} />
+        ))}
+        {typewriters[currentIndex] && (
           <Typewriter
-            key={index}
             options={{
               autoStart: true,
               loop: false,
-              delay: 40, // Velocidad de escritura
-              deleteSpeed: 20, // Velocidad de eliminación
+              delay: 40,
+              deleteSpeed: 20,
             }}
             onInit={(typewriter) => {
               typewriter
-                .typeString(item.text)
+                .typeString(typewriters[currentIndex].text)
+                .pauseFor(typewriters[currentIndex].pause)
                 .callFunction(() => {
-                  console.log("String typed out!");
-                })
-                .pauseFor(item.pause) // Pausa después de escribir el texto
-                .callFunction(() => {
-                  console.log("Waiting before next string...");
-                  setTimeout(() => {
-                    handleNext(); // Llama a la función para avanzar al siguiente Typewriter después de 1.5 segundos
-                  }, 1500); // Espera 1500 ms antes de avanzar
+                  // Agrega el texto actual a displayedTexts
+                  setDisplayedTexts((prev) => [...prev, typewriters[currentIndex].text]);
+                  // Avanza al siguiente índice
+                  setTimeout(() => handleNext(), 1500); // Espera antes de avanzar
                 })
                 .start();
             }}
           />
-        )
-      ))}
-      <div dangerouslySetInnerHTML={{ __html: displayedText }} /> {/* Muestra el texto acumulado */}
-    </div>
+        )}
+      </div>
   );
 }
