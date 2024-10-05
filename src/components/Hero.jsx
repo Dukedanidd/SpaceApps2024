@@ -13,25 +13,25 @@ function Hero() {
   return (
     <>
       <section
-        className="relative h-screen bg-cover bg-center bg-no-repeat bg-base-100 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 px-4 lg:px-8 py-8 lg:py-16 "
+        className="relative h-screen bg-cover bg-center bg-no-repeat bg-base-100 flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8 px-2 lg:px-4 py-4 lg:py-8"
         style={{ backgroundImage: "url('./space.jpg')" }}
       >
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center text-center">
           <p
             id="nebula"
-            className="text-center text-cyan-200 text-9xl lg:text-9xl transform"
+            className="flex-col flex gap-2 text-cyan-200 text-3xl lg:text-6xl transform mb-12"
           >
             NEBULA
           </p>
           <h1
             id="drift"
-            className="text-center text-sky-300 text-9xl lg:text-9xl font-bold"
+            className="flex-col flex gap-2 text-sky-300 text-4xl lg:text-8xl font-bold mb-[70px]"
           >
             DRIFT
           </h1>
           <button
             onClick={HandlePlayClick}
-            className="group cursor-pointer relative cursor-default w-[120px] h-[60px] bg-[linear-gradient(144deg,_#af40ff,_#5b42f3_50%,_#00ddeb)] text-white whitespace-nowrap flex flex-wrap rounded-lg overflow-hidden"
+            className="group cursor-pointer relative w-[100px] h-[50px] bg-[linear-gradient(144deg,_#af40ff,_#5b42f3_50%,_#00ddeb)] text-white whitespace-nowrap flex items-center justify-center rounded-lg overflow-hidden"
           >
             <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none">
               PLAY

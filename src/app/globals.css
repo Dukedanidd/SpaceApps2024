@@ -14,10 +14,21 @@
   }
 }
 #nebula {
-  font-size: 300px;
+  font-size: 300px; /* tamaño original */
 }
+@media (max-width: 768px) {
+  #nebula {
+    font-size: 80px; /* tamaño responsivo para pantallas más pequeñas */
+  }
+}
+
 #drift {
-  font-size: 240px;
+  font-size: 240px; /* tamaño original */
+}
+@media (max-width: 768px) {
+  #drift {
+    font-size: 70px; /* tamaño responsivo para pantallas más pequeñas */
+  }
 }
 
 body {
