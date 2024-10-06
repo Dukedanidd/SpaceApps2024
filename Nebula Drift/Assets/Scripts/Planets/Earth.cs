@@ -43,6 +43,15 @@ public class Earth : MonoBehaviour
                 asteroid.transform.position = new Vector3(RandomCooedinate(), RandomCooedinate(), RandomCooedinate());
                 asteroid.transform.localScale = new Vector3(50, 50, 50);
                 asteroid.tag = "Asteroid";
+
+                // Bool random to set the asteroid material
+                bool isDangerous = Random.value > 0.5f;
+                if (isDangerous)
+                    asteroid.GetComponent<Renderer>().material = Resources.Load<Material>("Textures/Planets/Materials/AsteroidDangerous");
+                else
+                    asteroid.GetComponent<Renderer>().material = Resources.Load<Material>("Textures/Planets/Materials/Asteroid");
+
+
             }
         generated = true;
     }

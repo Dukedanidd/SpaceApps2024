@@ -165,10 +165,25 @@ public class CameraController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift)) transform.position -= moveSpeed * transform.up;
 
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetMouseButtonDown(0))
         {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            // Destroy the object that the ray hits if it has the tag "Asteroid"
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform.forward, out hit, 1000))
+            {
+                if (hit.collider.tag == "Asteroid")
+                {
+                    Destroy(hit.collider.gameObject);
+                    // Update the level in the local storage
+                    if (Application.platform == RuntimePlatform.WebGLPlayer)
+                    {
+                        if (hit.collider.GetComponent<Renderer>().material.name == "AsteroidDangerous (Instance)")
+                        {
+                            SetLocalStorage("level", (int.Parse(GetLocalStorage("level")) + 1).ToString());
+                        }
+                    }
+                }
+            }
         }
     }
 }

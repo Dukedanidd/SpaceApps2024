@@ -30,14 +30,18 @@ public class Main : MonoBehaviour
         GameObject.Find("DesingPlayerButton").GetComponent<UnityEngine.UI.Button>().onClick.AddListener(DesingPlayer);
         GameObject.Find("UsernameButton").GetComponent<UnityEngine.UI.Button>().onClick.AddListener(Username);
 
-        if (GetLocalStorage("username") == null)
+        // Detect if is editor or web
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
         {
-            SetLocalStorage("username", "guest");
-        }
+            if (GetLocalStorage("username") == null)
+            {
+                SetLocalStorage("username", "guest");
+            }
 
-        if (GetLocalStorage("level") == null)
-        {
-            SetLocalStorage("level", "1");
+            if (GetLocalStorage("level") == null)
+            {
+                SetLocalStorage("level", "1");
+            }
         }
     }
 
