@@ -39,18 +39,24 @@ public class Earth : MonoBehaviour
             for (int i = 0; i < maxAsteroid; i++)
             {
                 // Create a new asteroid object
-                GameObject asteroid = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                // Load the asteroid prefab
+                int random = Random.Range(1, 4);
+                GameObject asteroid = Instantiate(Resources.Load<GameObject>("Prefabs/Asteroid " + random));
+
+                // Randomize the dangerous asteroid size
+                int size = Random.Range(1, 4);
+                if (size == 1)
+                    asteroid.transform.localScale = new Vector3(20, 20, 20);
+                else if (size == 2)
+                    asteroid.transform.localScale = new Vector3(40, 40, 40);
+                else if (size == 3)
+                    asteroid.transform.localScale = new Vector3(80, 80, 80);
+
                 asteroid.transform.position = new Vector3(RandomCooedinate(), RandomCooedinate(), RandomCooedinate());
-                asteroid.transform.localScale = new Vector3(50, 50, 50);
                 asteroid.tag = "Asteroid";
 
-                // Bool random to set the asteroid material
-                bool isDangerous = Random.value > 0.5f;
-                if (isDangerous)
-                    asteroid.GetComponent<Renderer>().material = Resources.Load<Material>("Textures/Planets/Materials/AsteroidDangerous");
-                else
-                    asteroid.GetComponent<Renderer>().material = Resources.Load<Material>("Textures/Planets/Materials/Asteroid");
-
+                // Add collider to the asteroid
+                asteroid.AddComponent<SphereCollider>();
 
             }
         generated = true;

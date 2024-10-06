@@ -177,9 +177,20 @@ public class CameraController : MonoBehaviour
                     // Update the level in the local storage
                     if (Application.platform == RuntimePlatform.WebGLPlayer)
                     {
-                        if (hit.collider.GetComponent<Renderer>().material.name == "AsteroidDangerous (Instance)")
+
+                        // Check if the asteroid is dangerous depending on its size
+                        if (hit.collider.transform.localScale.x == 80)
                         {
                             SetLocalStorage("level", (int.Parse(GetLocalStorage("level")) + 1).ToString());
+                        }
+                        else if (hit.collider.transform.localScale.x == 40)
+                        {
+                            SetLocalStorage("level", (int.Parse(GetLocalStorage("level")) + 2).ToString());
+                        }
+                        else if (hit.collider.transform.localScale.x == 20)
+                        {
+                            SetLocalStorage("level", (int.Parse(GetLocalStorage("level")) + 3).ToString());
+
                         }
                     }
                 }
