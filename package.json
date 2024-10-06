@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write .",
-    "update": "IF EXIST ./Nebula Drift/build/Build (ROBOCOPY Nebula Drift/build/Build public/build /E) ELSE (echo Error: Game build not found)"
+    "format": "prettier --write ."
   },
   "dependencies": {
     "framer-motion": "^11.11.1",
