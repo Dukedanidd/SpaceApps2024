@@ -38,12 +38,19 @@ public class CameraController : MonoBehaviour
         canvas = GameObject.Find("Canvas");
         canvas.transform.Find("PausePanel").Find("ResumeButton").GetComponent<UnityEngine.UI.Button>().onClick.AddListener(Resume);
         canvas.transform.Find("PausePanel").Find("ExitButton").GetComponent<UnityEngine.UI.Button>().onClick.AddListener(Exit);
-        level = GameObject.Find("Level").GetComponent<TMP_Text>();
+        level = GameObject.Find("Level").GetComponent<TMP_Text>();  
     }
 
     private void Update()
     {
-        level.text = "Level: " + GetLocalStorage("level");
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            level.text = "Level: " + GetLocalStorage("level");
+        }
+        else
+        {
+            level.text = "Level: 1";
+        }
 
         // Detect escape key to pause the game
         if (Input.GetKeyDown(KeyCode.Escape))
