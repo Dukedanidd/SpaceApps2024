@@ -8,12 +8,12 @@ export default function TypingEffect() {
 
   const typewriters = [
     {
-      text: "El sueño del astronauta Dart",
+      text: "The dream of astronaut Dart",
       pause: 1000,
       next: 1,
     },
     {
-      text: "Dart, ingeniero aeroespacial, siempre soñó con ser astronauta.<br/>Cuando la NASA reconoció su talento le ofrecieron la<br/> oportunidad de su vida. <br/>Podría proteger a la tierra de asteroides peligrosos.",
+      text: "Dart, an aerospace engineer, always dreamed of being an astronaut.<br/>When NASA recognized his talent, they offered him the<br/> opportunity of his life. <br/>He could protect Earth from dangerous asteroids.",
       pause: 1500,
       next: 2,
     },
@@ -23,7 +23,7 @@ export default function TypingEffect() {
       next: 3,
     },
     {
-      text: "Se asignó al cuidado de DEX.<br/> Un avanzado y carismático robot para ayudarlo<br/> a identificar cuerpos celestes.<br/>Ambos siempre listos para la aventura.",
+      text: "He was assigned to care for DEX.<br/> An advanced and charismatic robot to help him<br/> identify celestial bodies.<br/>Both always ready for adventure.",
       pause: 1500,
       next: 4,
     },
