@@ -9,7 +9,7 @@ const Overlay = () => {
     const timer = setTimeout(() => {
       setFadeOut(true); 
       setTimeout(() => setShowOverlay(false), 1000);
-    }, 4500); //duracion del overlay
+    }, 2000); //duracion del overlay
     return () => clearTimeout(timer);
   }, []);
 

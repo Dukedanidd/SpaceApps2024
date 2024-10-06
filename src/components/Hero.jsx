@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import SectionLore from "./SectionLore";
 
 function Hero() {
   const HandlePlayClick = () => {
@@ -64,7 +63,6 @@ function Hero() {
 
         </div>
       </section>
-      <SectionLore />
     </>
   );
 }
