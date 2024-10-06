@@ -2,8 +2,6 @@
 import { useSession, signIn, signOut } from "next-auth/react";
 import Hero from "@components/Hero";
 import Overlay from '../components/Overlay';
-import Login from "@components/Login";
-import SectionLore from "../components/SectionLore";
 
 export default function Home() {
   const { data: session } = useSession();
@@ -34,17 +32,17 @@ export default function Home() {
 
   if (session) {
     return (
-      <> 
+      <>
         <Overlay />
-        
+
         <Hero />
         <div>
-      <p style={loginButtonStyleBienvenida}>Bienvenido, {session.user.email}</p>
-      <button style={loginButtonStyle} onClick={() => signOut()}>Cerrar sesión</button>
-    </div>
-      <SectionLore />
+          <p style={loginButtonStyleBienvenida}>Bienvenido, {session.user.email}</p>
+          <button style={loginButtonStyle} onClick={() => signOut()}>Cerrar sesión</button>
+        </div>
         
-       
+
+
       </>
     );
   }

@@ -12,6 +12,7 @@ export default function RootLayout({ children, session }) {
           href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap"
           rel="stylesheet"
         />
+        <title>NebulaDrift</title>
         <meta charSet="utf-8" />
       </head>
 
