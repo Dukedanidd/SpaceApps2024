@@ -1,13 +1,16 @@
 "use client";
 import { useSession } from "next-auth/react";
 import { Unity, useUnityContext } from "react-unity-webgl";
+import { useEffect } from "react";
 
 export default function Home() {
   const { data: session } = useSession();
 
-  // Set user
-  if (localStorage.getItem("username") == null && session)
-    localStorage.setItem("username", session.user.name)
+  // Get static props
+  useEffect(() => {
+    if (localStorage.getItem("username") == null && session)
+      localStorage.setItem("username", session.user.name);
+  }, [session]);
 
   const { unityProvider } = useUnityContext({
     loaderUrl: "game/build.loader.js",

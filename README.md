@@ -1,16 +1,13 @@
-#
+# NASA Space Apps Challenge 2024
 
-Build the game with the following command:
+## Challenge: `Create an Orrery Web App that Displays Near-Earth Objects`
 
-```bash
-Unity -quit -batchmode -projectpath game -executeMethod Builder.Build
-```
+## Team Name: Prometheans
 
-Copy the game build to the website with the following command:
+### Team Members:
 
-> [!NOTE]  
-> Wait for the build to finish before running this command
-
-```bash
-ROBOCOPY game\build\Build\ public\game\ /E
-```
+- **Armando Bueno**
+- **Carlos Ramos**
+- **Daniel Balderrama**
+- **Layla Gill**
+- **Isaac Guzmán**
