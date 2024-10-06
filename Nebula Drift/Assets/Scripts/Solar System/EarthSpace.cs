@@ -8,16 +8,12 @@ public class EarthSpace : MonoBehaviour
     private GameObject infoCollider;
     private GameObject teletransporterCollider;
     private GameObject player;
-    private GameObject infoPanel;
 
     void Start()
     {
         infoCollider = GameObject.Find("EarthInfoCollider");
         teletransporterCollider = GameObject.Find("EarthTeletransporterCollider");
         player = GameObject.Find("Player");
-        infoPanel = player.transform.Find("Canvas").Find("InfoPanel").gameObject;
-
-
     }
 
     // Update is called once per frame
@@ -26,8 +22,11 @@ public class EarthSpace : MonoBehaviour
         // Detect if the camera is inside the info collider
         if (infoCollider.GetComponent<Collider>().bounds.Contains(player.transform.position))
         {
-            // Add Text to the Info Panel
-            Debug.Log("Inside Info Collider");
+            player.transform.Find("Canvas").Find("EarthInfoPanel").gameObject.SetActive(true);
+        }
+        else
+        {
+            player.transform.Find("Canvas").Find("EarthInfoPanel").gameObject.SetActive(false);
         }
 
         // Detect if the camera is inside the teletransporter collider
