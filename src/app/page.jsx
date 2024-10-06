@@ -41,7 +41,7 @@ export default function Home() {
             Bienvenido, {session.user.email}
           </p>
           <button style={loginButtonStyle} onClick={() => signOut()}>
-            Cerrar sesión
+            Close session
           </button>
         </div>
       </>
@@ -53,7 +53,7 @@ export default function Home() {
       <Overlay />
       <Hero />
       <button style={loginButtonStyle} onClick={() => signIn()}>
-        Iniciar sesión
+        Sign in
       </button>
     </>
   );
