@@ -8,22 +8,22 @@ export default function TypingEffect() {
 
   const typewriters = [
     {
-      text: "Capitulo 1: El sueño de Astronautita Armstrong",
+      text: "El sueño del astronauta Dart",
       pause: 1000,
       next: 1,
     },
     {
-      text: "Astronautita Armstrong, ingeniero de la NASA, siempre soñó con el espacio.<br/>Cuando lo seleccionaron para la Operación Estrella Brillante, su corazón<br/> se llenó de emoción. <br/>Tendría la oportunidad de desviar asteroides peligrosos.",
+      text: "Dart, ingeniero aeroespacial, siempre soñó con ser astronauta.<br/>Cuando la NASA reconoció su talento le ofrecieron la<br/> oportunidad de su vida. <br/>Podría proteger a la tierra de asteroides peligrosos.",
       pause: 1500,
       next: 2,
     },
     {
-      text: "Capitulo 2: Con DEX a Bordo",
+      text: "DEX",
       pause: 1000,
       next: 3,
     },
     {
-      text: "En la nave, conoció a DEX, un robot ingenioso.<br/> “¡Listo para la aventura!” dijo DEX, haciendo<br/> reír a Astronautita. Juntos, se prepararon <br/>para lo que vendría.",
+      text: "Se asignó al cuidado de DEX.<br/> Un avanzado y carismático robot para ayudarlo<br/> a identificar cuerpos celestes.<br/>Ambos siempre listos para la aventura.",
       pause: 1500,
       next: 4,
     },
@@ -38,13 +38,12 @@ export default function TypingEffect() {
   return (
     <div className="flex flex-col gap-1 items-center text-2xl lg:text-4xl justify-center min-h-screen font-mono text-center">
       <div className="text-4xl lg:text-6xl flex flex-col items-center justify-center mb-4 text-center">
-        <h3>La Misión Estelar de Astronautita Armstrong y DEX</h3>
+        <h3>Intro</h3>
       </div>
       {typewriters.map((item, index) => (
         index <= currentIndex && ( 
-          <div style={{ marginBottom: '10px' }}> 
+          <div key={index} style={{ marginBottom: '10px' }}> 
             <Typewriter
-              key={index}
               options={{
                 autoStart: true,
                 loop: false,
