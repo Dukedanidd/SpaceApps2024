@@ -41,8 +41,8 @@ export default function TypingEffect() {
         <h3>La Misión Estelar de Astronautita Armstrong y DEX</h3>
       </div>
       {typewriters.map((item, index) => (
-        index <= currentIndex && ( // Cambiado de '===' a '<=' para mostrar todos los textos hasta el índice actual
-          <div style={{ marginBottom: '10px' }}> {/* Añadido un div con margen */}
+        index <= currentIndex && ( 
+          <div style={{ marginBottom: '10px' }}> 
             <Typewriter
               key={index}
               options={{
