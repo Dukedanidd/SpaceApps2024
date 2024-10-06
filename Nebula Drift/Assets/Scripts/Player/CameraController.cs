@@ -1,7 +1,15 @@
 using UnityEngine;
+using System.Runtime.InteropServices;
+using TMPro;
 
 public class CameraController : MonoBehaviour
 {
+    [DllImport("__Internal")]
+    private static extern void SetLocalStorage(string key, string value);
+
+    [DllImport("__Internal")]
+    private static extern string GetLocalStorage(string key);
+
     public Vector2 clampInDegrees = new(360, 180);
     public Vector2 sensitivity = new(2, 2);
     public Vector2 smoothing = new(3, 3);
@@ -21,6 +29,8 @@ public class CameraController : MonoBehaviour
     private bool isPaused = false;
     private GameObject canvas;
 
+    private TMP_Text level;
+
 
     private void Start()
     {
@@ -28,10 +38,13 @@ public class CameraController : MonoBehaviour
         canvas = GameObject.Find("Canvas");
         canvas.transform.Find("PausePanel").Find("ResumeButton").GetComponent<UnityEngine.UI.Button>().onClick.AddListener(Resume);
         canvas.transform.Find("PausePanel").Find("ExitButton").GetComponent<UnityEngine.UI.Button>().onClick.AddListener(Exit);
+        level = GameObject.Find("Level").GetComponent<TMP_Text>();
     }
 
     private void Update()
     {
+        level.text = "Level: " + GetLocalStorage("level");
+
         // Detect escape key to pause the game
         if (Input.GetKeyDown(KeyCode.Escape))
         {
