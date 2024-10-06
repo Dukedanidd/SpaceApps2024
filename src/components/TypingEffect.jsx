@@ -38,7 +38,7 @@ export default function TypingEffect() {
   return (
     <div className="flex flex-col gap-1 items-center text-2xl lg:text-4xl justify-center min-h-screen font-mono text-center">
       <div className="text-4xl lg:text-6xl flex flex-col items-center justify-center mb-4 text-center">
-        <h3>Intro</h3>
+        <h3 className="sticky top-0 text-center text-4xl font-bold text-white bg-black w-full py-4">Intro</h3>
       </div>
       {typewriters.map((item, index) => (
         index <= currentIndex && ( 
