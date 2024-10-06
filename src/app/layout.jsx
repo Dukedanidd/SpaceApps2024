@@ -1,11 +1,8 @@
+"use client"
 import "./globals.css";
+import { SessionProvider } from "next-auth/react";
 
-export const metadata = {
-  title: "Nebula Drift",
-  description: "A No Sabemos Programar App",
-};
-
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, session }) {
   return (
     <html lang="en">
       <head>
@@ -19,7 +16,9 @@ export default function RootLayout({ children }) {
       </head>
 
       <body className="bg-gray-100 text-gray-900 font-tiny5 w-screen h-screen">
-        {children}
+        <SessionProvider session={session}>
+          {children}
+        </SessionProvider>
       </body>
     </html>
   );
