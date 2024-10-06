@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 55a60107127504145ada5a6e81af7bff
   - enabled: 1
+    path: Assets/Scenes/Desing Player.unity
+    guid: 91a125626578d814683429233f996344
+  - enabled: 1
     path: Assets/Scenes/Solar System.unity
     guid: db3f7f95503c6ae92b6a58fd49be3d1b
   - enabled: 1

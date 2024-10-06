@@ -51,4 +51,3 @@ public class SolarSystem : MonoBehaviour
         Time.timeScale = 0.1f;
     }
 }
-    

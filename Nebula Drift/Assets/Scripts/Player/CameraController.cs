@@ -18,14 +18,55 @@ public class CameraController : MonoBehaviour
 
     private readonly float moveSpeed = 0.5f;
 
+    private bool isPaused = false;
+    private GameObject canvas;
+
+
     private void Start()
     {
         DesktopSetup();
+        canvas = GameObject.Find("Canvas");
+        canvas.transform.Find("PausePanel").Find("ResumeButton").GetComponent<UnityEngine.UI.Button>().onClick.AddListener(Resume);
+        canvas.transform.Find("PausePanel").Find("ExitButton").GetComponent<UnityEngine.UI.Button>().onClick.AddListener(Exit);
     }
 
     private void Update()
     {
-        DesktopInputUpdate();
+        // Detect escape key to pause the game
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!isPaused)
+            {
+                canvas.transform.Find("PausePanel").gameObject.SetActive(true);
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+                isPaused = true;
+            } else
+            {
+                canvas.transform.Find("PausePanel").gameObject.SetActive(false);
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                isPaused = false;
+            }
+        }
+
+        if (!isPaused)
+        {
+            DesktopInputUpdate();
+        }
+    }
+
+    void Exit()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Main Menu");
+    }
+
+    void Resume()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        GameObject.Find("PausePanel").SetActive(false);
+        isPaused = false;
     }
 
     private void DesktopSetup()

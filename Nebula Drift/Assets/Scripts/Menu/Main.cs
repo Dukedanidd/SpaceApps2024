@@ -5,16 +5,25 @@ using UnityEngine;
 public class Main : MonoBehaviour
 {
 
-    private GameObject playButton;
-
     void Start()
     {
-        playButton = GameObject.Find("PlayButton");
-        playButton.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(TaskOnClick);
+        GameObject.Find("PlayButton").GetComponent<UnityEngine.UI.Button>().onClick.AddListener(PlayGame);
+        GameObject.Find("DesingPlayerButton").GetComponent<UnityEngine.UI.Button>().onClick.AddListener(DesingPlayer);
+
     }
 
     void TaskOnClick()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Solar System");
+    }
+
+    void PlayGame()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Solar System");
+    }
+
+    void DesingPlayer()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Desing Player");
     }
 }
