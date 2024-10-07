@@ -28,7 +28,6 @@ public class Main : MonoBehaviour
     {
         GameObject.Find("PlayButton").GetComponent<UnityEngine.UI.Button>().onClick.AddListener(PlayGame);
         GameObject.Find("DesingPlayerButton").GetComponent<UnityEngine.UI.Button>().onClick.AddListener(DesingPlayer);
-        GameObject.Find("UsernameButton").GetComponent<UnityEngine.UI.Button>().onClick.AddListener(Username);
 
         // Detect if is editor or web
         if (Application.platform == RuntimePlatform.WebGLPlayer)
@@ -53,12 +52,7 @@ public class Main : MonoBehaviour
 
     void DesingPlayer()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Desing Player");
-    }
-
-    public void Username()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Username");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Design Player");
     }
 
 }

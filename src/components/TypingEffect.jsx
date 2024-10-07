@@ -1,4 +1,3 @@
-import next from "next";
 import React, { useState } from "react";
 import Typewriter from "typewriter-effect";
 

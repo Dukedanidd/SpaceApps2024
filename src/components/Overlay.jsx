@@ -20,15 +20,15 @@ const Overlay = () => {
       className={`fixed inset-0 bg-black flex items-center justify-center z-50 transition-opacity duration-1000 ${fadeOut ? "opacity-0" : "opacity-100"}`}
     >
       <div className="text-center text-white px-8">
-        <h1 className="text-4xl font-mono font-bold mb-4">Atención</h1>
+        <h1 className="text-4xl font-mono font-bold mb-4">Attention</h1>
         <p className="text-lg font-mono">
-          Los asteroides y cuerpos celestes presentes en este juego son todos
-          basados en información oficial.
+          The asteroids and celestial bodies present in this game are all based
+          on official information from NASA.
           <br />
-          El objetivo de este juego es que fomentar el aprendizaje con
-          interacciones didácticas.
+          The objective of this game is to encourage learning with educational
+          interactions.
           <br />
-          Para más información visite
+          For more information visit:
           https://eyes.nasa.gov/apps/asteroids/#/home
         </p>
       </div>

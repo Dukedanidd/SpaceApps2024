@@ -69,12 +69,3 @@ function Hero() {
 }
 
 export default Hero;
-
-{
-  /*
-<div class="flex items-center justify-center h-screen">
-  <div class="relative group">
-  </div>
-</div>
-*/
-}
